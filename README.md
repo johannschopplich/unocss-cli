@@ -52,7 +52,7 @@ You can also pass multiple glob patterns to `unocss-cli`:
 npx unocss-cli "site/snippets/**/*.php" "site/templates/**/*.php"
 ```
 
-> ℹ️ Make sure to add quotes to your glob patterns to let the script handle parsing.
+> ℹ️ Make sure to add escaped quotes to your npm script glob patterns.
 
 ### Development
 
