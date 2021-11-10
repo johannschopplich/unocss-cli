@@ -2,7 +2,7 @@
 
 The missing CLI for the instant on-demand Atomic CSS engine. Perfect fit for your traditional backends.
 
-> Make sure to check out the [UnoCSS](https://github.com/antfu/unocss) repository for all details on UnoCSS.
+> Make sure to check out the [UnoCSS](https://github.com/antfu/unocss) repository for all the details.
 
 ## Key Features
 
@@ -74,11 +74,11 @@ The final `uno.css` will be generated to the current directory by default.
 
 ### `unocss.config.js` Support
 
-You can create a `unocss.config.js` (or `.cjs`) configuration file the root-level of your project. ESM is not supported, you will have to use CJS.
+Create a `unocss.config.js` configuration file the root-level of your project to customize UnoCSS.
 
 ```js
 /** @type {import('@unocss/vite').UnocssPluginOptions} */
-module.exports = {
+export default {
   shortcuts: [
     { 'box': 'max-w-7xl mx-auto bg-gray-100 rounded-md shadow-sm p-4' }
   ]

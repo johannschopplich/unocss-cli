@@ -3,28 +3,26 @@ import { readFile, writeFile } from 'fs/promises'
 import fg from 'fast-glob'
 import { createGenerator } from 'unocss'
 import { defaultConfig } from './config'
-import { lilconfig } from 'lilconfig'
+import { loadConfig } from '@unocss/config'
 import consola from 'consola'
 import { cyan, dim, green, white } from 'colorette'
 import { name, version } from '../package.json'
 import { handleError, PrettyError } from './errors'
 import { debouncePromise } from './utils'
-import type { UnoGenerator, UserConfigDefaults } from 'unocss'
+import type { UnoGenerator, UserConfig } from 'unocss'
 import type { Options, NormalizedOptions } from './types'
 
 let uno: UnoGenerator
-let unoCssConfig: UserConfigDefaults
+let userConfig: UserConfig
 const fileCache = new Map<string, string>()
 
-async function resolveUnoCssConfig(): Promise<UserConfigDefaults> {
-  if (unoCssConfig) {
-    return unoCssConfig
-  }
+function resolveUserConfig() {
+  if (userConfig) return userConfig
 
-  const result = await lilconfig('unocss', {}).search()
+  const result = loadConfig()
 
-  unoCssConfig = result?.config ?? {}
-  return unoCssConfig
+  userConfig = result.config ?? {}
+  return userConfig
 }
 
 export async function generateUnoCss(options: NormalizedOptions) {
@@ -59,7 +57,7 @@ const normalizeOptions = async (options: Options) => {
 export async function build(_options: Options) {
   const options = await normalizeOptions(_options)
 
-  uno = createGenerator(await resolveUnoCssConfig(), defaultConfig)
+  uno = createGenerator(resolveUserConfig(), defaultConfig)
 
   const files = await fg(options.patterns)
   await Promise.all(
