@@ -77,7 +77,7 @@ The final `uno.css` will be generated to the current directory by default.
 You can create a `unocss.config.js` (or `.cjs`) configuration file the root-level of your project. ESM is not supported, you will have to use CJS.
 
 ```js
-/** @type {import('unocss').UnocssPluginOptions} */
+/** @type {import('@unocss/vite').UnocssPluginOptions} */
 module.exports = {
   shortcuts: [
     { 'box': 'max-w-7xl mx-auto bg-gray-100 rounded-md shadow-sm p-4' }
