@@ -1,6 +1,9 @@
-import { defineConfig, presetAttributify, presetUno } from 'unocss'
+import { defineConfig, presetUno } from 'unocss'
 
 export const defaultConfig = defineConfig({
   envMode: 'build',
-  presets: [presetAttributify({ strict: true }), presetUno()]
+  presets: [
+    // presetAttributify({ strict: true }),
+    presetUno()
+  ]
 })
