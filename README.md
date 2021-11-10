@@ -77,12 +77,13 @@ The final `uno.css` will be generated to the current directory by default.
 Create a `unocss.config.js` configuration file the root-level of your project to customize UnoCSS.
 
 ```js
-/** @type {import('@unocss/vite').UnocssPluginOptions} */
-export default {
+import { defineConfig } from 'unocss'
+
+export default defineConfig({
   shortcuts: [
     { 'box': 'max-w-7xl mx-auto bg-gray-100 rounded-md shadow-sm p-4' }
   ]
-}
+})
 ```
 
 For a list of options, head over to the [UnoCSS configurations](https://github.com/antfu/unocss#configurations) docs.
