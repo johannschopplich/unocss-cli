@@ -59,7 +59,7 @@ npx unocss-cli "site/snippets/**/*.php" "site/templates/**/*.php"
 Add the `--watch` (or `-w`) flag to enable watching for file changes:
 
 ```bash
-unocss-cli --watch "site/{snippets,templates}/**/*.php"
+unocss-cli "site/{snippets,templates}/**/*.php" --watch
 ```
 
 ### Production
