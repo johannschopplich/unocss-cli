@@ -6,9 +6,9 @@ The missing CLI for the instant on-demand Atomic CSS engine. Perfect fit for you
 
 ## Key Features
 
-- 🍱 Built with traditional backends like Laravel or Kirby in mind
-- 👀 [Watch mode](#watch)
-- 🔌 [`unocss.config.js`](#unocss-config-js-support) support
+- 🍱 Suited for traditional backends like Laravel or Kirby
+- 👀 [Watch mode](#watch) included
+- 🔌 Supports custom configurations via [`unocss.config.js`](#unocssconfigjs-support)
 
 ## Requirements
 
@@ -101,7 +101,7 @@ Indicates if the files found by the glob pattern should be watched.
 
 ## Credits
 
-- [Anthony Fu](https://antfu.me) for his inspirational work on [UnoCss](https://github.com/antfu/unocss).
+- [Anthony Fu](https://antfu.me) for his inspirational work on [UnoCSS](https://github.com/antfu/unocss).
 
 ## License
 
