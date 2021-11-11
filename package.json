@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "description": "The missing CLI for UnoCSS",
   "files": [
+    "bin",
     "dist"
   ],
   "exports": "./dist/index.js",
