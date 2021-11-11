@@ -15,7 +15,7 @@ import type { Options, NormalizedOptions } from './types'
 let uno: UnoGenerator
 const fileCache = new Map<string, string>()
 
-export async function generateUnoCss(options: NormalizedOptions) {
+export async function generate(options: NormalizedOptions) {
   const outFile = options.outFile ?? resolve(process.cwd(), 'uno.css')
   const { css, matched } = await uno.generate([...fileCache].join('\n'))
 
@@ -63,7 +63,7 @@ export async function build(_options: Options) {
 
   const debouncedBuild = debouncePromise(
     async () => {
-      generateUnoCss(options)
+      generate(options)
     },
     100,
     handleError
@@ -100,7 +100,7 @@ export async function build(_options: Options) {
     })
   }
 
-  await generateUnoCss(options)
+  await generate(options)
 
   startWatcher()
 }

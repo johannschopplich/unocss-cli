@@ -5,16 +5,12 @@
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "require": "./dist/index.js"
-    }
-  },
-  "main": "dist/index.js",
+  "exports": "./dist/index.js",
+  "main": "./dist/index.js",
   "bin": {
-    "unocss-cli": "dist/cli.js"
+    "unocss": "./bin/unocss.js"
   },
-  "types": "dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "engines": {
     "node": ">=14"
   },
@@ -38,7 +34,8 @@
   },
   "homepage": "https://github.com/johannschopplich/unocss-cli#readme",
   "scripts": {
-    "build": "tsup src/cli.ts src/index.ts --clean --dts",
+    "dev": "tsup --watch src",
+    "build": "tsup",
     "test": "npm run build && jest",
     "format": "prettier --write \"src/**/*.ts\"",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { cac } from 'cac'
+import { build } from './index'
 import { name, version } from '../package.json'
 import { handleError } from './errors'
 import type { Options } from './types'
@@ -12,13 +13,11 @@ async function main(options: Options = {}) {
     .command('[...patterns]', 'Glob patterns', {
       ignoreOptionDefaultValue: true
     })
-    .option('-o, --out-file <dir>', 'Output file', {
+    .option('-o, --out-file <file>', 'Output file', {
       default: process.cwd()
     })
     .option('-w, --watch', 'Watch for file changes')
     .action(async (patterns: Array<string>, flags) => {
-      const { build } = await import('.')
-
       Object.assign(options, {
         ...flags
       })

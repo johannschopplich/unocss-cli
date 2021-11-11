@@ -35,11 +35,11 @@ Example package configuration:
 ```json
 {
   "scripts": {
-    "dev": "unocss-cli \"site/{snippets,templates}/**/*.php\" --watch",
-    "build": "unocss-cli \"site/{snippets,templates}/**/*.php\""
+    "dev": "unocss \"site/{snippets,templates}/**/*.php\" --watch",
+    "build": "unocss \"site/{snippets,templates}/**/*.php\""
   },
   "devDependencies": {
-    "unocss-cli": "^0.1.0"
+    "unocss-cli": "^0.3.0"
   }
 }
 ```
@@ -59,13 +59,13 @@ npx unocss-cli "site/snippets/**/*.php" "site/templates/**/*.php"
 Add the `--watch` (or `-w`) flag to enable watching for file changes:
 
 ```bash
-unocss-cli "site/{snippets,templates}/**/*.php" --watch
+npx unocss-cli "site/{snippets,templates}/**/*.php" --watch
 ```
 
 ### Production
 
 ```bash
-unocss-cli "site/{snippets,templates}/**/*.php"
+npx unocss-cli "site/{snippets,templates}/**/*.php"
 ```
 
 The final `uno.css` will be generated to the current directory by default.
@@ -90,7 +90,7 @@ For a list of options, head over to the [UnoCSS configurations](https://github.c
 
 ## Options
 
-> Inspect all available options with `unocss-cli --help`.
+> Inspect all available options with `unocss --help`.
 
 ### `--out-file`
 
