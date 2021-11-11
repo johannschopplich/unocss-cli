@@ -17,12 +17,13 @@ let userConfig: UserConfig
 const fileCache = new Map<string, string>()
 
 function resolveUserConfig() {
-  if (userConfig) return userConfig
+  let result = userConfig
 
-  const result = loadConfig()
+  if (!result) {
+    userConfig = loadConfig()?.config ?? {}
+  }
 
-  userConfig = result.config ?? {}
-  return userConfig
+  return result
 }
 
 export async function generateUnoCss(options: NormalizedOptions) {
