@@ -20,7 +20,8 @@ function resolveUserConfig() {
   let result = userConfig
 
   if (!result) {
-    userConfig = loadConfig()?.config ?? {}
+    result = loadConfig()?.config ?? {}
+    userConfig = result
   }
 
   return result
