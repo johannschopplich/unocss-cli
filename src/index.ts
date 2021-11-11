@@ -9,23 +9,11 @@ import { cyan, dim, green, white } from 'colorette'
 import { name, version } from '../package.json'
 import { handleError, PrettyError } from './errors'
 import { debouncePromise } from './utils'
-import type { UnoGenerator, UserConfig } from 'unocss'
+import type { UnoGenerator } from 'unocss'
 import type { Options, NormalizedOptions } from './types'
 
 let uno: UnoGenerator
-let userConfig: UserConfig
 const fileCache = new Map<string, string>()
-
-function resolveUserConfig() {
-  let result = userConfig
-
-  if (!result) {
-    result = loadConfig()?.config ?? {}
-    userConfig = result
-  }
-
-  return result
-}
 
 export async function generateUnoCss(options: NormalizedOptions) {
   const outFile = options.outFile ?? resolve(process.cwd(), 'uno.css')
@@ -59,7 +47,7 @@ const normalizeOptions = async (options: Options) => {
 export async function build(_options: Options) {
   const options = await normalizeOptions(_options)
 
-  uno = createGenerator(resolveUserConfig(), defaultConfig)
+  uno = createGenerator(loadConfig()?.config ?? {}, defaultConfig)
 
   const files = await fg(options.patterns)
   await Promise.all(
