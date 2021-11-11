@@ -30,6 +30,8 @@ npm i unocss-cli -D # or pnpm i unocss-cli -D
 
 Example package configuration:
 
+> ℹ️ Make sure to add escaped quotes to your npm script glob patterns.
+
 ```json
 {
   "scripts": {
@@ -51,8 +53,6 @@ You can also pass multiple glob patterns to `unocss-cli`:
 ```bash
 npx unocss-cli "site/snippets/**/*.php" "site/templates/**/*.php"
 ```
-
-> ℹ️ Make sure to add escaped quotes to your npm script glob patterns.
 
 ### Development
 

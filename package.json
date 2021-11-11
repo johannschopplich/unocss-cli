@@ -46,14 +46,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@unocss/config": "^0.7.4",
+    "@unocss/config": "^0.7.5",
     "cac": "^6.7.11",
     "chokidar": "^3.5.2",
     "colorette": "^2.0.16",
     "consola": "^2.15.3",
     "fast-glob": "^3.2.7",
     "pathe": "^0.2.0",
-    "unocss": "^0.7.4"
+    "unocss": "^0.7.5"
   },
   "devDependencies": {
     "@types/fs-extra": "^9.0.13",
