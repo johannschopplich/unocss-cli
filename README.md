@@ -1,3 +1,9 @@
+# ⚠️ unocss-cli is now part of [@unocss](https://github.com/antfu/unocss)
+
+👉 [https://github.com/antfu/unocss/tree/main/packages/cli](https://github.com/antfu/unocss/tree/main/packages/cli)
+
+****
+
 # unocss-cli
 
 The missing CLI for the instant on-demand Atomic CSS engine. Perfect fit for your traditional backends.
